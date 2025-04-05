@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "B2nn9jVdxSaRGThj7lBe/niI76vWKGfR4WftCCdOrF8=",
+  "Source": "ClientBooker.API",
+  "BasePath": "_content/ClientBooker.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

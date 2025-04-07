@@ -3,17 +3,17 @@ namespace Domain.Entities;
 public class Appointment
 {
     public Guid Id { get; init; } = Guid.NewGuid();
-    public Guid ClienteId { get; private set; }
-    public DateTime DataHora { get; private set; }
-    public string Descricao { get; private set; }
+    public Guid ClientId { get; init; }
+    public DateTime DateTime { get; private set; }
+    public string Description { get; private set; }
 
-    public Appointment(Guid clienteId, DateTime dataHora, string descricao)
+    public Appointment(Guid clientId, DateTime datetime, string description)
     {
-        if (dataHora <= DateTime.Now)
+        if (datetime <= DateTime.Now)
             throw new ArgumentException("Data e hora devem ser futuras.");
 
-        ClienteId = clienteId;
-        DataHora = dataHora;
-        Descricao = descricao;
+        ClientId = clientId;
+        DateTime = datetime;
+        Description = description;
     }
 }

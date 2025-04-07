@@ -2,8 +2,8 @@ namespace Domain.Interfaces;
 
 using Domain.Entities;
 
-public interface IClienteRepository
+public interface IClientRepository
 {
-    Task<Cliente> AddAsync(Cliente cliente);
-    Task<List<Cliente>> GetAllAsync();
+    Task<Client> AddAsync(Client Client);
+    Task<List<Client>> GetAllAsync();
 }

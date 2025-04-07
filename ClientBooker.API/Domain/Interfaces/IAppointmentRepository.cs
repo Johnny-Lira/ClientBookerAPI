@@ -6,6 +6,6 @@ public interface IAppointmentRepository
 {
     Task<Appointment> AddAsync(Appointment Appointment);
     Task<List<Appointment>> GetAllAsync();
-    Task<bool> ExisteAppointmentMesmoHorarioAsync(DateTime horario);
+    Task<bool> ExistsAppointmentAtSameTimeAsync(DateTime time);
     Task DeleteAsync(Guid id);
 }

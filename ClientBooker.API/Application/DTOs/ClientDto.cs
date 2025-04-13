@@ -1,4 +1,4 @@
-﻿namespace ClientBooker.API.Application.DTOs
+﻿namespace Application.DTOs
 {
     public record ClientDto
     {

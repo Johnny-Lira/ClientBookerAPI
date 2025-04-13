@@ -1,4 +1,4 @@
-﻿namespace ClientBooker.API.Application.Services
+﻿namespace Application.Services
 {
     using Application.DTOs;
     using Domain.Entities;

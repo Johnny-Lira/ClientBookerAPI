@@ -521,3 +521,4 @@ $RECYCLE.BIN/
 nunit-*.xml
 >>>>>>> cda17d9e0e0e892a2589cf4a69cb3c905fd14d6c
 /ClientBooker.API/Properties/launchSettings.json
+/ClientBooker.API/Docker/.env

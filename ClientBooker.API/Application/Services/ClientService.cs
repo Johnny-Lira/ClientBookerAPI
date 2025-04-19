@@ -1,6 +1,7 @@
 ﻿namespace Application.Services
 {
     using Application.DTOs;
+    using ClientBooker.API.Domain.Exceptions;
     using Domain.Entities;
     using Domain.Interfaces;
 
@@ -11,9 +12,19 @@
         public ClientService(IClientRepository repo) => _clientRepository = repo;
 
         public async Task<ClientDto> CreateAsync(ClientDto dto)
-        {
-            Console.WriteLine($"[ClientService] Creating client: {dto.Name}");
+        {            
+            //TODO Checar se ja existe o Client
+            var existingClient = await _clientRepository.GetByEmailAsync(dto.Email).ConfigureAwait(false);
+
+            if (existingClient != null)
+            { 
+                throw new ClientAlreadyExistsException($"Client with email {dto.Email} already exists.");
+            }
+            
+            Console.WriteLine($"[ClientService] Creating client: {dto.Name} | clientId: {dto.Email}");
+            
             var client = new Client(dto.Name, dto.Phone, dto.Email);
+
             var saved = await _clientRepository.AddAsync(client).ConfigureAwait(false);
 
             return new ClientDto

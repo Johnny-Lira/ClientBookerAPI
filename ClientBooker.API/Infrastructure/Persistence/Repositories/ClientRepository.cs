@@ -14,12 +14,20 @@ namespace Infrastructure.Repositories
         {
             _context.Clients.Add(client);
             await _context.SaveChangesAsync();
+
             return client;
         }
 
         public async Task<List<Client>> GetAllAsync()
         {
             return await _context.Clients.ToListAsync();
+        }
+
+        public Task<Client?> GetByEmailAsync(string email)
+        {
+            return _context.Clients
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Email == email);
         }
     }
 }

@@ -1,6 +1,16 @@
-@ClientBooker.API_HostAddress = http://localhost:5278
+@ClientBooker.API_HostAddress = https://localhost:54181
 
-GET {{ClientBooker.API_HostAddress}}/weatherforecast/
+### Criar cliente
+POST {{ClientBooker.API_HostAddress}}/api/clients
+Content-Type: application/json
 Accept: application/json
 
-###
+{
+  "name": "Johnny Lira",
+  "phone": "11934372171",
+  "email": "johnnyjlira@gmail.com"
+}
+
+### Listar todos os clientes
+GET {{ClientBooker.API_HostAddress}}/api/clients
+Accept: application/json

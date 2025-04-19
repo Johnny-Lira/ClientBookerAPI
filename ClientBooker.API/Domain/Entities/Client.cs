@@ -3,9 +3,11 @@ namespace Domain.Entities;
 public record Client
 {
     public Guid Id { get; init; } = Guid.NewGuid();
-    public string Name { get; private set; }
-    public string Phone { get; private set; }
-    public string Email { get; private set; }
+    public string Name { get; protected set; }
+    public string Phone { get; protected set; }
+    public string Email { get; protected set; }
+
+    protected Client() { } // Parameterless constructor for EF Core
 
     public Client(string name, string phone, string email)
     {

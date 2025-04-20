@@ -1,17 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.DTOs;
 using Application.Services;
-using Microsoft.AspNetCore.Http.HttpResults;
 using ClientBooker.API.Domain.Exceptions;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ClientsController : ControllerBase
+    public class ClientsController(ClientService service) : ControllerBase
     {
-        private readonly ClientService _service;
-        public ClientsController(ClientService service) => _service = service;
+        private readonly ClientService _service = service;
 
         [HttpPost]
         public async Task<ActionResult<ClientDto>> Create(ClientDto dto)

@@ -13,7 +13,6 @@
 
         public async Task<ClientDto> CreateAsync(ClientDto dto)
         {            
-            //TODO Checar se ja existe o Client
             var existingClient = await _clientRepository.GetByEmailAsync(dto.Email).ConfigureAwait(false);
 
             if (existingClient != null)

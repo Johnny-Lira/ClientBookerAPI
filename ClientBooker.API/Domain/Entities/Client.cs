@@ -3,9 +3,9 @@ namespace Domain.Entities;
 public record Client
 {
     public Guid Id { get; init; } = Guid.NewGuid();
-    public string Name { get; protected set; }
-    public string Phone { get; protected set; }
-    public string Email { get; protected set; }
+    public string Name { get; protected set; } = string.Empty;
+    public string Phone { get; protected set; } = string.Empty;
+    public string Email { get; protected set; } = string.Empty;
 
     protected Client() { } // Parameterless constructor for EF Core
 

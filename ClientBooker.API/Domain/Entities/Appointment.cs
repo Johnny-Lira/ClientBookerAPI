@@ -5,7 +5,7 @@ public class Appointment
     public Guid Id { get; init; } = Guid.NewGuid();
     public Guid ClientId { get; init; }
     public DateTime DateTime { get; protected set; }
-    public string Description { get; protected set; }
+    public string Description { get; protected set; } = string.Empty;
 
     protected Appointment() { } // Parameterless constructor for EF Core
 

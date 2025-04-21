@@ -20,7 +20,7 @@
                 throw new ClientAlreadyExistsException($"Client with email {dto.Email} already exists.");
             }
             
-            Console.WriteLine($"[ClientService] Creating client: {dto.Name} | clientId: {dto.Email}");
+            Console.WriteLine($"[ClientService] Creating client: {dto.Name} | clientEmail: {dto.Email}");
             
             var client = new Client(dto.Name, dto.Phone, dto.Email);
 
